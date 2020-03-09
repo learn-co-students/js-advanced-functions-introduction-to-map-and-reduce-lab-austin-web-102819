@@ -34,6 +34,25 @@ function mapToNegativize(src) {
       return newArray
   }
 
-  function reduceToTotal() {
-      
+  function reduceToTotal(array, startingPoint=0) {
+    let memo = startingPoint
+    for (let i =0; i < array.length; i++){
+       memo = memo + array[i]
+    }
+
+    return memo
+  }
+
+  function reduceToAllTrue(array) {
+    for (let i = 0; i < array.length; i++ ) {
+        if (!array[i]) return false
+      }
+      return true
+  }
+
+  function reduceToAnyTrue(src) {
+    for (let i = 0; i < src.length; i++ ) {
+      if (src[i]) return true
+    }
+    return false
   }
